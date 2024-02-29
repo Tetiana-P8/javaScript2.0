@@ -1,0 +1,116 @@
+.card-tour
+  height: 52rem
+  perspective: 150rem
+  -moz-perspective: 150rem
+  -webkit-perspective: 150rem
+  position: relative
+  &__side
+    height: 52rem
+    transition: .7s
+    color: $color-white
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    backface-visibility: hidden
+    box-shadow: $box-shadow
+    border-radius: .5rem
+    overflow: hidden
+    &_front
+      background: $color-white
+
+    &_back
+      transform: rotateY(180deg)
+      background:  linear-gradient(120deg, rgba($color-brown-light, 0.70) 0.03%, rgba($color-brown-dark, 0.70) 99.94%)
+
+
+  &:hover &__side_front
+    transform: rotateY(-180deg)
+  &:hover &__side_back
+    transform: rotateY(0deg)
+  &__img
+    height: 24rem
+    background-blend-mode: hard-light
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+    @include respond(tab-port)
+      height: 30rem
+    @include respond(phone)
+      height: 24rem
+
+    
+
+  &__img_1
+    background: $color-brown-light url(../img/tour-1.jpg) bottom / cover no-repeat 
+  &__img_2
+    background: $color-brown-light url(../img/tour-2.jpg) center / cover no-repeat 
+  &__img_3
+    background: $color-brown-light url(../img/tour-3.jpg) center / cover no-repeat 
+    
+  &__title
+    font-size: 2.8rem
+    font-weight: 300
+    letter-spacing: .2rem
+    text-transform: uppercase
+    text-align: right
+    position: absolute
+    top: 17rem
+    right: 0rem
+    @include respond(tab-port)
+      top: 22rem
+      font-size: 3.4rem
+    @include respond(phone)
+      top: 17rem
+      font-size: 3.4rem
+
+
+    
+
+
+  &__descr
+    ul
+      list-style: none
+      margin: 0 auto
+      width: 80%
+      text-align: center
+      li
+        font-size: 1.6rem
+        font-weight: 700
+        letter-spacing: .2rem
+        color: $color-grey
+        display: inline-block
+        border-bottom: 1px solid $color-grey
+        &:not(:last-child)
+          margin-bottom: 2rem
+        @include respond(tab-land)
+          font-size: 1.5rem
+        @include respond(phone)
+          font-size: 1.7rem
+        
+
+  &__span
+    background:  linear-gradient(90deg, $color-brown-light 3.65%, $color-brown-dark 100%)
+    padding: 1rem 1.6rem .3rem
+    &_2
+      position: absolute
+      top: 4.3rem
+      right: 0
+
+
+  &__backSide-box
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  &__text
+    text-align: center
+    margin-bottom: 8rem
+    text-transform: uppercase
+    letter-spacing: 2px
+    color: $color-white
+  &__text_1
+    font-size: $font-size-paragraph
+    font-weight: 300
+  &__text_2
+    font-size: 6rem
+    font-weight: 400
+
